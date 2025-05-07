@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+    <meta charset="UTF-8">
+    <title>Exibir via URL</title>
+        <script>
+            function pegarDadosDaURL() {
+            const params = new URLSearchParams(window.location.search);
+
+            const nome = params.get("nome") || "Não informado";
+            const numero = params.get("numero") || "Não informado";
+            const email = params.get("email") || "Não informado";
+            const url = params.get("url") || "Não informada";
+            const videogame = params.get("videogame") || "Não informado";
+            const disciplinas = params.get("disciplinas") || "Não informada";
+
+            document.getElementById("nomeExibido").innerText = nome;
+            document.getElementById("numeroExibido").innerText = numero;
+            document.getElementById("emailExibido").innerText = email;
+            document.getElementById("urlExibida").innerText = url;
+            document.getElementById("videoGameExibido").innerText = videogame;
+            document.getElementById("disciplinaExibida").innerText = disciplinas;
+            }
+        </script>
+    </head>
+    <body onload="pegarDadosDaURL()">
+        <h1>Dados Recebidos pela URL</h1>
+        <p><strong>Nome:</strong> <span id="nomeExibido"></span></p>
+        <p><strong>Numero:</strong> <span id="numeroExibido"></span></p>
+        <p><strong>e-mail:</strong> <span id="emailExibido"></span></p>
+        <p><strong>url:</strong> <span id="urlExibida"></span></p>
+        <p><strong>Video Game:</strong> <span id="videoGameExibido"></span></p>
+        <p><strong>Disciplina:</strong> <span id="disciplinaExibida"></span></p>
+
+        <a href="index.html">Voltar</a>
+    </body>
+ </html>
